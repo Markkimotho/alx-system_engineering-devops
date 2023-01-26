@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # script that plays the FizzBuzz game
 count=100
-i=0
-for (( i; i<count; i=i+1 )); do
+i=1
+for (( i; i<=count; i=i+1 )); do
     if (( i%15 == 0 ));
-        then 
+        then
 	    echo "FizzBuzz"
     elif (( i%3 == 0 ));
         then
