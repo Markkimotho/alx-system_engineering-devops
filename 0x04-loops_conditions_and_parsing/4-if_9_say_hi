@@ -5,14 +5,10 @@ count=10
 i=1
 while (( i<=count )); do
     if (( i != 9 ))
-    then 
+    then
         echo Best School
     else
         echo Hi
-    fi 
-
+    fi
     i=$((i+1))
 done
-	
-	
-
