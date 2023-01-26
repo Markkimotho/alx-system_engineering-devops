@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# script that displays current directory's content
+# in list format where only the part of the name after
+# the first dash
+list=$(ls -1)
+for i in $list; do
+	echo "$i" | cut --delimiter='-' --fields=2
+done
