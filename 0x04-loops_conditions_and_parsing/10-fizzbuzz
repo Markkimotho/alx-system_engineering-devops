@@ -6,7 +6,7 @@ for (( i; i<count; i=i+1 )); do
     if (( i%15 == 0 ));
         then 
 	    echo "FizzBuzz"
-    elif (( i%3 == 0 )); 
+    elif (( i%3 == 0 ));
         then
 	    echo "Fizz"
     elif (( i%5 == 0 ));
@@ -14,6 +14,5 @@ for (( i; i<count; i=i+1 )); do
 	    echo "Buzz"
     else
         echo "$i"
-
     fi
 done
