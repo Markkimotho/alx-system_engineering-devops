@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script that displays its own PID
+# In bash PID of a shell script's subshell process is stored in a special variable called $$
+echo "$$"
