@@ -7,8 +7,11 @@
 # deletes the pid file and terminates on SIGQUIT or SIGTERM signal.
 touch /var/run/myscript.pid
 echo "$$" >> /var/run/myscript.pid
+
 trap "echo I hate the kill command; exit" SIGTERM
 trap "echo I hate the kill command" SIGINT
+trap "exit" SIGQUIT
+
 while true; do
     echo "To infinity and beyond"
     sleep 2
