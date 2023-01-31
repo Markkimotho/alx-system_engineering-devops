@@ -9,7 +9,8 @@ Here is the `Ruby` code that you should use, just replace the regexp part, meani
 
 `example.rb`:
 
-```#!/usr/bin/env ruby
+```
+   #!/usr/bin/env ruby
    puts ARGV[0].scan(/127.0.0.[0-9]/).join
 ```
 
