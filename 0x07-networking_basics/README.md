@@ -1,7 +1,15 @@
 # 0x07. Networking basics #0
 
 0. OSI model
-
+```
+   Application Layer
+   Presentation Layer
+   Session Layer
+   Transport Layer
+   Network Layer
+   Data Link Layer
+   Physical Layer
+```
 1. Types of network
 ```
    LAN
