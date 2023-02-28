@@ -97,15 +97,15 @@ The primary node handles write requests and manages replication, while the repli
 
 
 ### Issues with this infrastructure
-**SPOF**
+* **SPOF**
 
 The Load Balancer is a single point for this infrastructure. If it went down during operation, then the rest of the servers will not recieve the request nor will the client get the response. Another SPOF is the database; if the database goes down then data will not be retrived. Utltimately, There are multiple SPOFs.
 
-**Security Issues(No Firewall)**
+* **Security Issues(No Firewall)**
 
 It is easy to pass unwanted traffic into the servers. For instance, a malicious party might use the load balancer to inject malware into the database in the servers through SQL injections or other hacking malpractices. No firewall means unwanted traffic can get into and out of the servers which is not good for the website owners not the clients. 
 
-**No Monitoring**
+* **No Monitoring**
 
 If not monitored systems can behave in undefined ways without notice, and when noticed they might results to costly debugging mechanisms. It will end up leading to losses because the services offered by the servers might seize or behave in peculiar ways. 
 
@@ -149,14 +149,14 @@ To monitor the QPS of a web server, you need to install a monitoring tool and ag
 
 
 ### Issues with this infrastructure
-**Why terminating SSL at the load balancer level is an issue**
+* **Why terminating SSL at the load balancer level is an issue**
 
 If SSL is terminated at the load balancer level, traffic between the load balancer and the web server is unencrypted, which can lead to data breaches. Compliance standards such as PCI DSS require SSL to be terminated at the web server level. Terminating SSL at the load balancer level can also impact performance and make troubleshooting SSL-related issues difficult. It is generally recommended to terminate SSL at the web server level to minimize risks and ensure compliance with relevant standards.
 
-**Why having only one MySQL server capable of accepting writes is an issue**
+* **Why having only one MySQL server capable of accepting writes is an issue**
 Having only one MySQL server capable of accepting writes can be an issue because it creates a single point of failure. If the MySQL server fails, the entire application that relies on it may also fail, leading to downtime and loss of revenue. Additionally, having only one write-capable MySQL server can limit scalability and performance because all write requests must go through a single server. This can result in slow response times, particularly during periods of high traffic or heavy write loads. To mitigate these issues, it is recommended to use a MySQL cluster or a master-slave replication setup to distribute the write load across multiple servers and provide fault tolerance and better performance.
 
-**Why having servers with all the same components (database, web server and application server) might be a problem**
+* **Why having servers with all the same components (database, web server and application server) might be a problem**
 
 Having servers with all the same components, such as database, web server, and application server, might be a problem because it can lead to a lack of diversity and increased risk of a single point of failure. If all servers have the same components, they may all be vulnerable to the same security threats or software bugs. If a software bug or security vulnerability is discovered, it may affect all servers and cause widespread downtime or data breaches. Additionally, if all servers have the same hardware and software configuration, they may all require the same patches or upgrades at the same time, which can lead to service interruptions or compatibility issues. To mitigate these risks, it is recommended to have a mix of server types and configurations, such as having different versions of operating systems or software, to provide diversity and reduce the risk of a single point of failure.
 
