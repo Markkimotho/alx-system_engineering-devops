@@ -4,65 +4,63 @@
 
 ### Specifics of this infrastructure: 
 
-**What is a server:**
+#### What is a server:
 
-A server is a computer(physical or virtual) that contains information which is provided upon request by another computer called a "Client"
+	A server is a computer(physical or virtual) that contains information which is provided upon request by another computer called a "Client"
 
-**What is the role of the domain name**
+#### What is the role of the domain name
 
 
 
-**What is DNS?:**
+#### What is DNS?:
 
-DNS is a distributed database that is used to match a domain name to its corresponding IP Address.
-For example; when you type www.google.com, a lookup/search is performed across this distributed database to find the corresponding address, which the browser then uses to find the server and request from it the information that is desired. 
-In this example, we have www.foobar.com typed to the web browser. A DNS lookup is perfomed and the IP address (8.8.8.8) is returned. Then, the browser follows that address to find the server where the information it wants is located.
+	DNS is a distributed database that is used to match a domain name to its corresponding IP Address.
+	For example; when you type www.google.com, a lookup/search is performed across this distributed database to find the corresponding address, which the browser then uses to find the server and request from it the information that is desired. 
+	In this example, we have www.foobar.com typed to the web browser. A DNS lookup is perfomed and the IP address (8.8.8.8) is returned. Then, the browser follows that address to find the server where the information it wants is located.
 
-**Role Of the Domain Name:**
+#### Role Of the Domain Name:
 
-It is easier for human beings to remember names than a series of numbers. It is as simple as that. Fundamentally the domain name is an alias for the IP address.­
+	It is easier for human beings to remember names than a series of numbers. It is as simple as that. Fundamentally the domain name is an alias for the IP address.­
 
-**What type of DNS record is "www"  in "www.foobar.com":**
+#### What type of DNS record is "www"  in "www.foobar.com":
 
-**Type A**
+	**Type A**
 
-A DNS record is in the format : RR(name, value, type, ttl)
+	A DNS record is in the format : RR(name, value, type, ttl)
 
-This record maps the domain to the IP address-- where name:domain name and value is IP Address which implies a record of type A
+	This record maps the domain to the IP address-- where name:domain name and value is IP Address which implies a record of type A
 
-**What is the role of:**
+#### What is the role of:
 
-**Web Server**
-
+* Web Server
 A Web Server is a program that handles HTTP requests from clients(usually web browsers) and serves or responds with HTML pages along with other object files embedded within them (e.g. image files).
 
-**Application Server**
-
+* Application Server
 However, some services not offered by the web server like Transaction Processing, API response or any other dynamic content are handled by the Application Server.
 
-**What is the role of the database**
+* **What is the role of the database**
 
-**Database?:**
+* **Database?:**
 It is an organized store of data. The essense of databases is to store, manage, and retrieve data in a controlled and secure way. These are the advantages that set databases apart from other data storing methods like flat files.
 
 In this case, we used the relational database MySQL to store our data in tables from where they can be retrieved upon request. Relational database was the most preferred candidate because it allows CRUD opeartions. 
 
-**What is the server using to communicate with the computer of the user requesting the website**
+* **What is the server using to communicate with the computer of the user requesting the website**
 
 HTTP - A protocol that governs how servers and clients communicate.
 
 
 ### Issues with this Infrastructure
 
-**SPOF (Single Point Of Failure)**
+* **SPOF (Single Point Of Failure)**
 
 There are several **SPOFs(Single Point of Failure)** in this infrastructure. This implies that when a link or resource(i.e. database) is in one way or the other disconnected or removed, the request message might fail to arrive at the server or the response message might fail to arrive at the client. 
 
-**Downtime when maintenance needed**
+* **Downtime when maintenance needed**
 
 When new code is added or written, the web server has to be restarted so that the changes can reflect. Since we have only one physical server to attend to a client(s), a downtime will be experienced for as long as the server needs to restart to be updated with new changes. 
 This problem thus demands replica server that can be able to attend to clients while the other server updates.
-**Scale challenges**
+* **Scale challenges**
 
 The goal of scaling is to ensure that the system or application can handle increasing levels of traffic or workload, while maintaining performance and reliability. However, our current infrastructure isn't designed to handle heavy traffic. Say, we increase the number of requests to the www.foobar.com server, or we get more clients that want the data from the server. Our server might not withstand the "pressure"; the traffic might to too much for it's resources to handle. Therefore, the server will either slow down in it's response rate, cause some data collisions or might even crash. Needless to say, the Infrastructue is efficient for critical service provision.
 
@@ -76,10 +74,10 @@ Additions to our infrastructure:
 
 #### Load Balancer.
 
-**Role:** A load balancer is a device or software that will be used to efficiently and evenly distribute traffic across multiple servers or nodes, so that no single server is overwhelmed or overloaded with requests.
+* **Role:** A load balancer is a device or software that will be used to efficiently and evenly distribute traffic across multiple servers or nodes, so that no single server is overwhelmed or overloaded with requests.
 #### Servers.
 
-**Role:** These additional servers will serve the clients requests and ultimately reduce the traffic to  one server that might stunt performance. The choice of server will depend on the load balancer--the algorithms it's configured with, the preferred setup(active-active or active-passive) and the configuration of the servers(master-replica) 
+* **Role:** These additional servers will serve the clients requests and ultimately reduce the traffic to  one server that might stunt performance. The choice of server will depend on the load balancer--the algorithms it's configured with, the preferred setup(active-active or active-passive) and the configuration of the servers(master-replica) 
 
 **What distribution algorithm your load balancer is configured with and how it works**
 
