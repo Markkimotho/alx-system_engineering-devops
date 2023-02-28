@@ -6,7 +6,7 @@
 
 #### What is a server:
 
-	A server is a computer(physical or virtual) that contains information which is provided upon request by another computer called a "Client"
+A server is a computer(physical or virtual) that contains information which is provided upon request by another computer called a "Client"
 
 #### What is the role of the domain name
 
@@ -14,38 +14,38 @@
 
 #### What is DNS?:
 
-	DNS is a distributed database that is used to match a domain name to its corresponding IP Address.
-	For example; when you type www.google.com, a lookup/search is performed across this distributed database to find the corresponding address, which the browser then uses to find the server and request from it the information that is desired. 
-	In this example, we have www.foobar.com typed to the web browser. A DNS lookup is perfomed and the IP address (8.8.8.8) is returned. Then, the browser follows that address to find the server where the information it wants is located.
+DNS is a distributed database that is used to match a domain name to its corresponding IP Address.
+For example; when you type www.google.com, a lookup/search is performed across this distributed database to find the corresponding address, which the browser then uses to find the server and request from it the information that is desired. 
+In this example, we have www.foobar.com typed to the web browser. A DNS lookup is perfomed and the IP address (8.8.8.8) is returned. Then, the browser follows that address to find the server where the information it wants is located.
 
 #### Role Of the Domain Name:
-
-	It is easier for human beings to remember names than a series of numbers. It is as simple as that. Fundamentally the domain name is an alias for the IP address.­
+It is easier for human beings to remember names than a series of numbers. It is as simple as that. Fundamentally the domain name is an alias for the IP address.­
 
 #### What type of DNS record is "www"  in "www.foobar.com":
+**Type A**
 
-	**Type A**
+A DNS record is in the format : RR(name, value, type, ttl)
 
-	A DNS record is in the format : RR(name, value, type, ttl)
-
-	This record maps the domain to the IP address-- where name:domain name and value is IP Address which implies a record of type A
+This record maps the domain to the IP address-- where name:domain name and value is IP Address which implies a record of type A
 
 #### What is the role of:
 
-* Web Server
+* Web Server:
+
 A Web Server is a program that handles HTTP requests from clients(usually web browsers) and serves or responds with HTML pages along with other object files embedded within them (e.g. image files).
 
-* Application Server
+* Application Server:
+
 However, some services not offered by the web server like Transaction Processing, API response or any other dynamic content are handled by the Application Server.
 
 * **What is the role of the database**
 
-* **Database?:**
+#### Database?:
 It is an organized store of data. The essense of databases is to store, manage, and retrieve data in a controlled and secure way. These are the advantages that set databases apart from other data storing methods like flat files.
 
 In this case, we used the relational database MySQL to store our data in tables from where they can be retrieved upon request. Relational database was the most preferred candidate because it allows CRUD opeartions. 
 
-* **What is the server using to communicate with the computer of the user requesting the website**
+#### What is the server using to communicate with the computer of the user requesting the website
 
 HTTP - A protocol that governs how servers and clients communicate.
 
