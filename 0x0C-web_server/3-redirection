@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
-# The redirection must be a "301 Moved Permanently"
-# You answer file should be a Bash script containing commands to automatically configure a Ubuntu machine to respect above requirements
-# Using what you did with 1-install_nginx_web_server, write 3-redirection so that it configures a brand new Ubuntu machine to the requirements asked in this task
-
-sudo apt-get update
-sudo apt-get install -y nginx
-
-echo "Hello World!" | sudo tee /var/www/html/index.html
-string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.blog.ehoneahobed.com permanent;"
-sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
-
+# Install nginx on my web01 server
+# Configure nginx server so /redirect_me is redirecting to another page
+# Redirection must be a 301 moved permanently
+sudo apt-get -y install nginx
+sudo service nginx start
+sudo sed -i '37i\rewrite ^/redirect_me http://ktinega.tech permanent;' /etc/nginx/sites-available/default
 sudo service nginx restart
-
