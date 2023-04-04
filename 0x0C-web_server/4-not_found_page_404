@@ -2,8 +2,11 @@
 # Install nginx on my web01 server
 # Configure nginx server to have a custom 404 page that contains
 # "Ceci n'est pas une page"
+
+sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo service nginx start
-echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/error_404.html
-sudo sed -i '38i\error_page 404 /error_404.html;' /etc/nginx/sites-available/default
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+sed -i '38i\rewrite /^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/error_404.html > /dev/null
+sudo sed -i '/^\slocation.*/i \        error_page 404 /error_404.html;' /etc/nginx/sites-available/default
 sudo service nginx restart
