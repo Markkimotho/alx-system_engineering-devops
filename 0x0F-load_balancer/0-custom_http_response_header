@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Configure nginx web server and add a response header
+
+# installing web server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+# indexing, redirect option
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+sed -i '38i\rewrite /^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+
+# indexing, error page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/error_404.html > /dev/null
+sudo sed -i '/^\slocation.*/i \        error_page 404 /error_404.html;' /etc/nginx/sites-available/default
+
+# response header
+sudo sed -i '/^\slocation.*/i \        add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+
+sudo service nginx start
