@@ -1,6 +1,39 @@
 #!/usr/bin/env bash
+# Install nginx on my web01 server
+# Configure nginx server so /redirect_me is redirecting to another page
+# Redirection must be a 301 moved permanently
+
+# Update package and install Nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+# Configure Nginx to listen on port 80
+sudo sed -i 's/listen\s*80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
+
+# Create a new index.html in /var/www/html directory file with "Hello World!" in it
+echo "Hello World!" > /var/www/html/index.html
+
+# Create a custom 404 error page
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+# Setting up the redirect and configuring Nginx to use the custom 404 page
+echo "server {
+	location /redirect_me {
+		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+	}
+	location / {
+		root /var/www/html;
+		index index.html;
+	}
+
+	error_page 404 /404.html;
+	location = /404.html {
+		internal;
+	}
+}" | sudo tee /etc/nginx/sites-available/default > /dev/null
+
 # Configure nginx web server and add a response header
 sudo sed -i '/^\slocation\s\/\s{/a \        add_header X-Served-By \$hostname;' /etc/nginx/sites-available/default
 
-# Restart Nginx
+# Restart Nginx to apply the changes
 sudo service nginx restart
