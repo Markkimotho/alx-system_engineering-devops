@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Configure nginx web server and add a response header
 sudo sed -i '/^\slocation\s\/\s{/a \        add_header X-Served-By \$hostname;' /etc/nginx/sites-available/default
 
