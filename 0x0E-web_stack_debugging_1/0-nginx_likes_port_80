@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # Script that checks why my ubuntu container isn't connecting on port 80
-sudo sed -i 's/8080 default_server/80 default_server/g' /etc/nginx/sites_enabled/default
+# take the nginx config and give it a new link and restart the server
+sudo ln -fs /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart

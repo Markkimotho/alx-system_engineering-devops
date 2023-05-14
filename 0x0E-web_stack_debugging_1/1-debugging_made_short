@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Script that checks why port 80 isnt being listened on
-sudo sed -i 's/8080 default_server/80 default_server/g' /etc/nginx/sites_enabled/default
+sudo sed -i 's/8080 default_server/80 default_server/g' /etc/nginx/sites-enabled/default
 sudo service nginx restart
-sudo systemctl stop nginx
+sudo pkill -o nginx
