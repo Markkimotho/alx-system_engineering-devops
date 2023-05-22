@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Request employee ID from API"""
+"""Request employee ID from API
+"""
 
 import requests
 import sys
