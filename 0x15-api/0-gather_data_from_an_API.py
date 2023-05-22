@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Request employee ID from API
+"""Module that requests employee ID from API
+and returns information about his/her TODO list progress
 """
 
 import requests
@@ -9,7 +10,8 @@ BASE_URL = 'https://jsonplaceholder.typicode.com/'
 
 
 def request(resource, params=None):
-    """Retrieve data from API"""
+    """Function that returns data in json format
+    from and API"""
     url = BASE_URL + resource
     response = requests.get(url, params=params)
     data = response.json()
