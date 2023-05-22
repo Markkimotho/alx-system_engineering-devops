@@ -1,7 +1,13 @@
 #!/usr/bin/python3
-"""Module that requests employee ID from API
-and returns information about his/her TODO list progress
 """
+Request employee ID from API
+This script retrieves employee information and tasks
+from an APIbased on the provided employee ID.It then
+displays the completed tasks for the specified employee.
+
+Usage: python script_name.py employee_id
+"""
+
 
 import requests
 import sys
