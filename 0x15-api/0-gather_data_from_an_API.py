@@ -42,4 +42,4 @@ if __name__ == "__main__":
                                                            completed_tasks,
                                                            total_tasks))
     for task in tasks_completed:
-        print(f'\t{task["title"]}')
+        print(f'\t {task["title"]}')

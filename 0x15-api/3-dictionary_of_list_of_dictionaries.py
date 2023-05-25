@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """Request employee ID from API
-This script retrieves employee information and tasks
-done from an API based on the provided employee ID.
+This script retrieves all employee information and tasks
+done from an API.
 It stores the information retrieved in a json file.
 
-Usage: python3 script_name.py employee_id
-       ./script_name.py employee_id
+Usage: python3 script_name.py
+       ./script_name.py
 """
 
 
@@ -53,5 +53,3 @@ if __name__ == "__main__":
 
     with open(json_file_path, 'w', encoding='utf-8') as json_file:
         json_file.write(json_data)
-
-    print(f'Employee tasks have been exported to {json_file_path}')
