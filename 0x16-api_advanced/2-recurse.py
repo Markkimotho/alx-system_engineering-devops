@@ -4,6 +4,7 @@
 
 import requests
 
+
 def recurse(subreddit, hot_list=None):
     if hot_list is None:
         hot_list = []

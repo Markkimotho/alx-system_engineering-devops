@@ -10,7 +10,7 @@ def top_ten(subreddit):
     of a subreddit
     Args: subreddit - subreddit to be queries
     """
-    base_url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+    base_url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
     user_agent = "0x16. API advanced"
     headers = {"User-Agent": user_agent}
 
@@ -21,7 +21,8 @@ def top_ten(subreddit):
     while len(post_titles) < 10:  # Fetching a total of 10 posts
         url = base_url
         if after:
-            url += "&after={}".format(after)  # Append "after" parameter for pagination
+            # Append "after" parameter for pagination
+            url += "&after={}".format(after)
 
         response = requests.get(url, headers=headers, allow_redirects=False)
 
