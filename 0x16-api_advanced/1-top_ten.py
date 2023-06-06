@@ -27,7 +27,7 @@ def top_ten(subreddit):
         response = requests.get(url, headers=headers, allow_redirects=False)
 
         if response.status_code != 200:
-            raise Exception("None")
+            print("None")
         data = response.json()["data"]
         comments = data["children"]
         for comment in comments:
