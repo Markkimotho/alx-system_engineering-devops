@@ -6,6 +6,11 @@ import requests
 
 
 def recurse(subreddit, hot_list=None):
+    """Recursive function that returns a list of subreddit's
+    hot topics' titles
+    Args:   subreddit - subreddit to be queried
+            hot_list[]- list to returned
+    """
     if hot_list is None:
         hot_list = []
 
