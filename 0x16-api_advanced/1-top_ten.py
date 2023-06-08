@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Module that queries for the top 10 hot posts titles
+from a subreddit using the reddit API
 """
 
 import requests
