@@ -23,9 +23,7 @@ def recurse(subreddit, hot_list=None, after=None):
     if response.status_code == 200:
         data = response.json()
         posts = data["data"]["children"]
-        for post in posts:
-            title = post["data"]["title"]
-            hot_list.append(title)
+        hot_list.extend([post["data"]["title"] for post in posts])
 
         after = data["data"]["after"]
         if after is not None:
@@ -33,5 +31,5 @@ def recurse(subreddit, hot_list=None, after=None):
         else:
             return hot_list
 
-    else: 
+    else:
         return None
