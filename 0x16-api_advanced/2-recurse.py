@@ -33,5 +33,5 @@ def recurse(subreddit, hot_list=None, after=None):
         else:
             return hot_list
 
-    elif response.status_code == 302:
+    else: 
         return None
