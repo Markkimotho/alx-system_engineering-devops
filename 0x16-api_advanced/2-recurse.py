@@ -5,7 +5,7 @@
 import requests
 
 
-def recurse(subreddit, hot_list=None):
+def recurse(subreddit, hot_list=None, after=None):
     """Recursive function that returns a list of subreddit's
     hot topics' titles
     Args:   subreddit - subreddit to be queried
@@ -20,18 +20,18 @@ def recurse(subreddit, hot_list=None):
 
     response = requests.get(base_url, headers=headers, allow_redirects=False)
 
-    if response.status_code != 200:
-        raise Exception("None")
+    if response.status_code == 200:
+        data = response.json()
+        posts = data["data"]["children"]
+        for post in posts:
+            title = post["data"]["title"]
+            hot_list.append(title)
 
-    data = response.json()["data"]
-    comments = data["children"]
-    for comment in comments:
-        title = comment["data"]["title"]
-        hot_list.append(title)
+        after = data["data"]["after"]
+        if after is not None:
+            recurse(subreddit, hot_list, after)
+        else:
+            return hot_list
 
-    after = data["after"]
-
-    if after:
-        return recurse(subreddit, hot_list=hot_list)
-
-    return hot_list
+    elif response.status_code == 302:
+        return None

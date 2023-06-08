@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Module that queries reddit API for its total subs
+"""
+Module that queries reddit API for its total subs
 """
 
 import requests
