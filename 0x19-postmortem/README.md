@@ -83,6 +83,7 @@ After these steps, the laptop was restored to its normal functioning state with 
 <div align="center">
   <img src="minions-yay.gif">
 </div>
+
 ## Corrective and Preventative Measures
 
 **Corrective Measures:**
