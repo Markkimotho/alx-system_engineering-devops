@@ -1,5 +1,9 @@
 # Postmortem: Ubuntu Laptop Boot Issue - Jun 9th, 2023
 
+<p align="center">
+  <img src="tech-support.gif">
+</p>
+
 ## Issue Summary
 
 From approximately 11:05AM EAT on Jun 9th to 1:40PM Jun 9th, my Ubuntu 22.04 Laptop experienced a boot issue where it booted up to a terminal with no GUI alternative to log into. This prevented graphical access to the laptop, forcing the use of the terminal for all tasks. The issue caused concern and disruption to normal workflow.
@@ -11,6 +15,11 @@ From approximately 11:05AM EAT on Jun 9th to 1:40PM Jun 9th, my Ubuntu 22.04 Lap
 **Description:** Attempted to log in repeatedly to access the laptop and start working.
 
 **Outcome:** Only a terminal was displayed
+
+<p align="center">
+  <img src="sys_restart.jpg">
+</p>
+
 
 `11:20AM-11:30AM:`
 
@@ -69,8 +78,11 @@ To resolve the issue and recover the graphical interface, the following actions 
 
 * Reinstalled the `ubuntu-desktop` package to retrieve all the necessary packages in the desktop environment.
 
-* After these steps, the laptop was restored to its normal functioning state with the GUI display.
+After these steps, the laptop was restored to its normal functioning state with the GUI display.
 
+<div align="center">
+  <img src="minions-yay.gif">
+</div>
 ## Corrective and Preventative Measures
 
 **Corrective Measures:**
