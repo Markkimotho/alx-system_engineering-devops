@@ -72,14 +72,14 @@ To resolve the issue and recover the graphical interface, the following actions 
 
 **Preventative Measures:**
 
-* Verify the compatibility of packages before installation to avoid potential conflicts or dependencies.
+Verify the compatibility of packages before installation to avoid potential conflicts or dependencies.
 
-* Backup important files and configurations regularly to minimize data loss in case of system failures or unexpected issues.
+Backup important files and configurations regularly to minimize data loss in case of system failures or unexpected issues.
 
-* Consider creating system restore points or using version control systems for easy restoration to a working state.
+Consider creating system restore points or using version control systems for easy restoration to a working state.
 
-* Stay informed about the latest updates, news, and issues related to the operating system to proactively address potential problems.
+Stay informed about the latest updates, news, and issues related to the operating system to proactively address potential problems.
 
-* Have a secondary system or alternative means of accessing work (e.g., secondary device or remote access) to reduce downtime during critical system issues.
+Have a secondary system or alternative means of accessing work (e.g., secondary device or remote access) to reduce downtime during critical system issues.
 
-* By following these measures, system stability and compatibility can be maintained, and the likelihood of similar boot issues can be reduced in the future.
+By following these measures, system stability and compatibility can be maintained, and the likelihood of similar boot issues can be reduced in the future.
