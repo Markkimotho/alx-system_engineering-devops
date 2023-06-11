@@ -10,32 +10,43 @@ From approximately 11:05AM EAT on Jun 9th to 1:40PM Jun 9th, my Ubuntu 22.04 Lap
 
 **Description:** Attempted to log in repeatedly to access the laptop and start working.
 
+**Outcome:** Only a terminal was displayed
+
 `11:20AM-11:30AM:`
 
 **Description:** Performed system update and package upgrade.
-Outcome: System update and package upgrade completed successfully.
+
+**Outcome:** System update and package upgrade completed successfully.
 
 `11:30AM-11:40AM:`
 
 **Description:** Checked the log files (/var/log/syslog) to investigate the root cause of the problem.
 
+**Outcome:** Discovered a Light Display Manager problem; none was available for use
+
 `11:40AM-12:00PM:`
 
 **Description:** Installed LightDM display manager as a potential solution.
-Outcome: The issue persisted even after the installation.
+
+**Outcome:** The issue persisted even after the installation.
 
 `12:00PM-1:20PM:`
 
 **Description:** Further reviewed the log files to determine the default display manager.
 
+**Outcome:** GDM (GNOME Display Manager) was the default display manager
+
 `1:20PM-1:30PM:`
 
 **Description:** Reinstalled a broken GDM3 (GNOME Display Manager) as a replacement.
-Outcome: Reinitialized the system and regained GUI display.
+
+**Outcome:** Reinitialized the system and regained GUI display.
 
 `1:30PM-1:40PM:`
 
 **Description:** Reinstalled ubuntu-desktop package to restore necessary packages in the desktop environment.
+
+**Outcome:** GUI successfully displayed.
 
 ## Root Cause
 
