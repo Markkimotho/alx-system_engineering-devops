@@ -1,24 +1,27 @@
 # Postmortem: Ubuntu Laptop Boot Issue - Jun 9th, 2023
 
 <p align="center">
-  <img src="tech-support.gif">
+  <img src="tech-fails.gif" width="300px" height="200px">
 </p>
 
 ## Issue Summary
 
-From approximately 11:05AM EAT on Jun 9th to 1:40PM Jun 9th, my Ubuntu 22.04 Laptop experienced a boot issue where it booted up to a terminal with no GUI alternative to log into. This prevented graphical access to the laptop, forcing the use of the terminal for all tasks. The issue caused concern and disruption to normal workflow.
+From approximately 11:05AM EAT on Jun 9th to 1:40PM EAT Jun 9th, my Ubuntu 22.04 Laptop experienced a boot issue where it booted up to a terminal with no GUI alternative to log into. This prevented graphical access to the laptop, forcing the use of the terminal for all tasks. The issue caused concern and disruption to normal workflow.
 
 ## Timeline
 
+**NOTE: ALL TIME IS IN THE _EAT_ FORMAT**
+
 `11:05AM-11:20AM:`
 
-**Description:** Attempted to log in repeatedly to access the laptop and start working.
-
-**Outcome:** Only a terminal was displayed
-
 <p align="center">
-  <img src="sys_restart.jpg">
+  <img src="sys_restart.jpg" width="200px" height="200px">
 </p>
+
+
+**Description:** Attempted to restart and log in repeatedly to access the laptop and start working.
+
+**Outcome:** A terminal was displayed at every iteration
 
 
 `11:20AM-11:30AM:`
@@ -44,6 +47,7 @@ From approximately 11:05AM EAT on Jun 9th to 1:40PM Jun 9th, my Ubuntu 22.04 Lap
 **Description:** Further reviewed the log files to determine the default display manager.
 
 **Outcome:** GDM (GNOME Display Manager) was the default display manager
+
 
 `1:20PM-1:30PM:`
 
@@ -90,7 +94,13 @@ After these steps, the laptop was restored to its normal functioning state with 
 
 * Always use package versions that are officially supported by the Ubuntu OS release to maintain system stability and compatibility.
 
-* Review log files (/var/log/syslog) to identify the root cause of issues and take appropriate actions.
+* Review log files (/var/log/syslog) to identify the root cause of issues and take appropriate actions.(log files are really saviors)
+
+<p align="center">
+  <img src="ubuntu-logs.jpeg" width="200px" height="200px">
+  <img src="log-files.jpg" width="200px" height="200px">
+</p>
+
 
 * Regularly update and upgrade the system to ensure the latest packages and security updates are applied.
 
